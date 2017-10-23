@@ -8,22 +8,28 @@ angular.module('app', [])
         $scope.keyIndex = keyIndex;
     };
 
-    $scope.scale = function(steps, decorators){
+    $scope.scale = function(scaleIndex){
         var scale = [];
-        var index = $scope.keyIndex;
+        var steps = [2,2,1,2,2,2,1];
+        var decorators = ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5'];
 
-        for (degree = 0 ; degree < steps.length ; degree++){
-            index += steps[degree];
-            scale[degree] = $scope.allKeys[index % 12] + decorators[degree];
-        }
+        var index = $scope.keyIndex;
+        var degree = 0;
+
+        do {
+            scale[degree] = $scope.allKeys[index % 12] + decorators[(degree + scaleIndex) % 7];
+            index += steps[(degree + scaleIndex) % 7];
+            degree++;
+        } while (degree < steps.length);
+
         return scale;
     };
 
     $scope.ionian = function(){
-        return $scope.scale([0,2,2,1,2,2,2], ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5']);
+        return $scope.scale(0);
     };
 
     $scope.dorian = function(){
-        return $scope.scale([0,2,1,2,2,2,1], ['-7', '-7', 'maj7', '7', '-7', '-7b5', 'maj7']);
+        return $scope.scale(1);
     };
 });

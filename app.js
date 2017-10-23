@@ -24,12 +24,4 @@ angular.module('app', [])
 
         return scale;
     };
-
-    $scope.ionian = function(){
-        return $scope.scale(0);
-    };
-
-    $scope.dorian = function(){
-        return $scope.scale(1);
-    };
 });

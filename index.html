@@ -34,100 +34,93 @@
         <hr/>
         <p class="lead text-center">Selected key: {{ allKeys[keyIndex] }}</p>
 
-        <h4>Diatonic Chords</h4>
         <table class="table table-striped table-bordered table-sm">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col">I</th>
-                    <th scope="col">II</th>
-                    <th scope="col">III</th>
-                    <th scope="col">IV</th>
-                    <th scope="col">V</th>
-                    <th scope="col">VI</th>
-                    <th scope="col">VII</th>
+                    <th></th>
+                    <th>I</th>
+                    <th>II</th>
+                    <th>III</th>
+                    <th>IV</th>
+                    <th>V</th>
+                    <th>VI</th>
+                    <th>VII</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>Chord</th>
-                    <th ng-repeat="chord in scale(0)">{{chord}}</th>
+                    <th>Diatonic Chords</th>
+                    <td ng-repeat="chord in scale(0)">{{chord}}</td>
                 </tr>
-            </tbody>
-        </table>
-
-        <div class="col-xs-12" style="height:25px;"></div>
-
-        <h4>Parallel Minor</h4>
-        <table class="table table-striped table-bordered table-sm">
-            <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col">I</th>
-                    <th scope="col">II</th>
-                    <th scope="col">III</th>
-                    <th scope="col">IV</th>
-                    <th scope="col">V</th>
-                    <th scope="col">VI</th>
-                    <th scope="col">VII</th>
+                    <th>Parallel Minor</th>
+                    <td ng-repeat="chord in scale(5)">{{chord}}</td>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <th>Chord</th>
-                    <th ng-repeat="chord in scale(5)">{{chord}}</th>
+                    <th></th>
                 </tr>
-            </tbody>
-        </table>
-
-        <div class="col-xs-12" style="height:25px;"></div>
-
-        <h4>Modal Substitutions</h4>
-        <table class="table table-striped table-bordered table-sm">
-            <thead>
                 <tr>
-                    <th scope="col">Mode</th>
-                    <th scope="col">I</th>
-                    <th scope="col">II</th>
-                    <th scope="col">III</th>
-                    <th scope="col">IV</th>
-                    <th scope="col">V</th>
-                    <th scope="col">VI</th>
-                    <th scope="col">VII</th>
+                    <th></th>
                 </tr>
-            </thead>
-            <tbody>
+                <tr>
+                    <th></th>
+                    <th>V of I (V7)</th>
+                    <th>V of II (VI7)</th>
+                    <th>V of III (VII7)</th>
+                    <th>V of IV (I7)</th>
+                    <th>V of V (II7)</th>
+                    <th>V of VI (III7)</th>
+                </tr>
+                <tr>
+                    <th>Secondary Dominants</th>
+                    <td ng-repeat="chord in secondaryDominants()">{{chord}}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Modal Substitutions</th>
+                    <th>I</th>
+                    <th>II</th>
+                    <th>III</th>
+                    <th>IV</th>
+                    <th>V</th>
+                    <th>VI</th>
+                    <th>VII</th>
+                </tr>
                 <tr>
                     <th>Ionian</th>
-                    <th ng-repeat="chord in scale(0)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(0)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Dorian</th>
-                    <th ng-repeat="chord in scale(1)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(1)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Phrygian</th>
-                    <th ng-repeat="chord in scale(2)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(2)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Lydian</th>
-                    <th ng-repeat="chord in scale(3)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(3)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Mixolydian</th>
-                    <th ng-repeat="chord in scale(4)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(4)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Aeolian</th>
-                    <th ng-repeat="chord in scale(5)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(5)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Locrian</th>
-                    <th ng-repeat="chord in scale(6)">{{chord}}</th>
+                    <td ng-repeat="chord in scale(6)">{{chord}}</td>
                 </tr>
             </tbody>
         </table>
-
 
         <!-- begin footer -->
         <hr/>

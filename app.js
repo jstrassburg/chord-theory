@@ -36,18 +36,18 @@ angular.module('app', [])
         return $scope.scale($scope.keyIndex + 7, 0, steps, decorators);
     };
 
+    $scope.tritoneSubstitutions = function(){
+        var steps = [2,2,1,2,2,2,1];
+        var decorators = ['7', '7', '7', '7', '7', '7', '7'];
+
+        return $scope.scale($scope.keyIndex + 6, 0, steps, decorators);
+    };
+
     $scope.augSixth = function(){
         return $scope.allKeys[($scope.keyIndex + 8) % 12] + '7';
     };
 
     $scope.neapolitanSixth = function(){
         return $scope.allKeys[($scope.keyIndex + 1) % 12] + '/' + $scope.allKeys[($scope.keyIndex + 5) % 12];
-    };
-
-    $scope.tritoneSubstitutions = function(){
-        var steps = [2,2,1,2,2,2,1];
-        var decorators = ['7', '7', '7', '7', '7', '7', '7'];
-
-        return $scope.scale($scope.keyIndex + 6, 0, steps, decorators);
     };
 });

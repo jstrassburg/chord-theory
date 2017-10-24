@@ -10,9 +10,6 @@ angular.module('app', [])
 
     $scope.scale = function(scaleIndex, steps, decorators){
         var scale = [];
-        var steps = [2,2,1,2,2,2,1];
-        var decorators = ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5'];
-
         var index = $scope.keyIndex;
         var degree = 0;
 

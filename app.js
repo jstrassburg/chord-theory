@@ -39,5 +39,13 @@ angular.module('app', [])
         } while (degree < steps.length - 1);
 
         return chords;
-    }
+    };
+
+    $scope.augSixth = function(){
+        return $scope.allKeys[($scope.keyIndex + 8) % 12] + '7';
+    };
+
+    $scope.neapolitanSixth = function(){
+        return $scope.allKeys[($scope.keyIndex + 1) % 12] + '/' + $scope.allKeys[($scope.keyIndex + 5) % 12];
+    };
 });

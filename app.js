@@ -8,7 +8,7 @@ angular.module('app', [])
         $scope.keyIndex = keyIndex;
     };
 
-    $scope.scale = function(scaleIndex){
+    $scope.scale = function(scaleIndex, steps, decorators){
         var scale = [];
         var steps = [2,2,1,2,2,2,1];
         var decorators = ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5'];
@@ -23,6 +23,13 @@ angular.module('app', [])
         } while (degree < steps.length);
 
         return scale;
+    };
+
+    $scope.majorScale = function(scaleIndex){
+        var steps = [2,2,1,2,2,2,1];
+        var decorators = ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5'];
+
+        return $scope.scale(scaleIndex, steps, decorators);
     };
 
     $scope.secondaryDominants = function(){

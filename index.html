@@ -37,7 +37,7 @@
         <table class="table table-striped table-bordered table-sm">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>*Major Key*</th>
                     <th>I</th>
                     <th>II</th>
                     <th>III</th>
@@ -50,21 +50,15 @@
             <tbody>
                 <tr>
                     <th>Diatonic Chords</th>
-                    <td ng-repeat="chord in scale(0)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(0)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Parallel Minor</th>
-                    <td ng-repeat="chord in scale(5)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(5)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Tritone Substitutions</th>
                     <td ng-repeat="chord in tritoneSubstitutions()">{{chord}}</td>
-                </tr>
-                <tr>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th></th>
                 </tr>
                 <tr>
                     <th></th>
@@ -94,6 +88,26 @@
                     <th></th>
                 </tr>
                 <tr>
+                    <th>*Minor Keys*</th>
+                    <th>I</th>
+                    <th>II</th>
+                    <th>III</th>
+                    <th>IV</th>
+                    <th>V</th>
+                    <th>VI</th>
+                    <th>VII</th>
+                </tr>
+                <tr>
+                    <th>Natural Minor (Aeolian)</th>
+                    <td ng-repeat="chord in majorScale(5)">{{chord}}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
                     <th>Modal Substitutions</th>
                     <th>I</th>
                     <th>II</th>
@@ -105,31 +119,31 @@
                 </tr>
                 <tr>
                     <th>Ionian</th>
-                    <td ng-repeat="chord in scale(0)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(0)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Dorian</th>
-                    <td ng-repeat="chord in scale(1)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(1)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Phrygian</th>
-                    <td ng-repeat="chord in scale(2)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(2)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Lydian</th>
-                    <td ng-repeat="chord in scale(3)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(3)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Mixolydian</th>
-                    <td ng-repeat="chord in scale(4)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(4)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Aeolian</th>
-                    <td ng-repeat="chord in scale(5)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(5)">{{chord}}</td>
                 </tr>
                 <tr>
                     <th>Locrian</th>
-                    <td ng-repeat="chord in scale(6)">{{chord}}</td>
+                    <td ng-repeat="chord in majorScale(6)">{{chord}}</td>
                 </tr>
             </tbody>
         </table>

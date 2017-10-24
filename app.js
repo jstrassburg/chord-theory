@@ -2,15 +2,15 @@ angular.module('app', [])
 
 .controller('ChordTheory', function($scope){
     $scope.allKeys = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#/Gb', 'G', 'Ab'];
-    $scope.keyIndex = 3;
+    $scope.keyIndex = 3; // default to C
 
     $scope.updateKey = function(keyIndex) {
         $scope.keyIndex = keyIndex;
     };
 
-    $scope.scale = function(scaleIndex, steps, decorators){
+    $scope.scale = function(keyIndex, scaleIndex, steps, decorators){
         var scale = [];
-        var index = $scope.keyIndex;
+        var index = keyIndex;
         var degree = 0;
 
         do {
@@ -26,23 +26,14 @@ angular.module('app', [])
         var steps = [2,2,1,2,2,2,1];
         var decorators = ['maj7', '-7', '-7', 'maj7', '7', '-7', '-7b5'];
 
-        return $scope.scale(scaleIndex, steps, decorators);
+        return $scope.scale($scope.keyIndex, scaleIndex, steps, decorators);
     };
 
     $scope.secondaryDominants = function(){
-        var chords = [];
         var steps = [2,2,1,2,2,2,1];
+        var decorators = ['7', '7', '7', '7', '7', '7', '7'];
 
-        var index = $scope.keyIndex + 7;
-        var degree = 0;
-
-        do {
-            chords[degree] = $scope.allKeys[index % 12] + '7';
-            index += steps[degree % 7];
-            degree++;
-        } while (degree < steps.length - 1);
-
-        return chords;
+        return $scope.scale($scope.keyIndex + 7, 0, steps, decorators);
     };
 
     $scope.augSixth = function(){
@@ -54,18 +45,9 @@ angular.module('app', [])
     };
 
     $scope.tritoneSubstitutions = function(){
-        var chords = [];
         var steps = [2,2,1,2,2,2,1];
+        var decorators = ['7', '7', '7', '7', '7', '7', '7'];
 
-        var index = $scope.keyIndex + 6;
-        var degree = 0;
-
-        do {
-            chords[degree] = $scope.allKeys[index % 12] + '7';
-            index += steps[degree % 7];
-            degree++;
-        } while (degree < steps.length);
-
-        return chords;
+        return $scope.scale($scope.keyIndex + 6, 0, steps, decorators);
     };
 });

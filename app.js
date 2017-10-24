@@ -38,7 +38,14 @@ angular.module('app', [])
 
     $scope.harmonicMinorScale = function(){
         var steps = [2,2,1,3,2,2,1];
-        var decorators = ['+', '-7', '-7', 'maj7', '7', '-', '°'];
+        var decorators = ['+', '-7', '7', 'maj7', '7', '-', '°'];
+
+        return $scope.scale($scope.keyIndex, 5, steps, decorators);
+    };
+
+    $scope.melodicMinorScale = function(){
+        var steps = [2,2,2,2,2,2,1];
+        var decorators = ['+', '7', '7', '7b5', '7b5', '-', '-7'];
 
         return $scope.scale($scope.keyIndex, 5, steps, decorators);
     };

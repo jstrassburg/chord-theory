@@ -36,6 +36,13 @@ angular.module('app', [])
         return $scope.scale($scope.keyIndex + 7, 0, steps, decorators);
     };
 
+    $scope.harmonicMinorScale = function(){
+        var steps = [2,2,1,3,2,2,1];
+        var decorators = ['+', '-7', '-7', 'maj7', '7', '-', '°'];
+
+        return $scope.scale($scope.keyIndex, 5, steps, decorators);
+    };
+
     $scope.tritoneSubstitutions = function(){
         var steps = [2,2,1,2,2,2,1];
         var decorators = ['7', '7', '7', '7', '7', '7', '7'];

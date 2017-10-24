@@ -14,21 +14,29 @@
     <div class="container-fluid" ng-controller="ChordTheory" ng-cloak>
         <h1 class="display-4">Chord Theory</h1>
         <hr />
-        <p class="lead">Select a key, see diatonic chords and common non-diatonic substitutions.</p>
+        <p class="lead">
+            Select a key, see diatonic chords and common non-diatonic substitutions. -
+            <a href="https://twitter.com/jstrassburg" target="_blank">
+                <span class="ion-social-twitter"></span>
+            </a> |
+            <a href="https://github.com/jstrassburg/chord-theory" target="_blank">
+                <span class="ion-social-github"></span>
+            </a>
+        </p>
 
-        <div class="container-fluid btn-group">
-            <button class="btn btn-primary" type="button" btn-radio="0" ng-click="updateKey(0)">A</button>
-            <button class="btn btn-primary" type="button" btn-radio="1" ng-click="updateKey(1)">Bb</button>
-            <button class="btn btn-primary" type="button" btn-radio="2" ng-click="updateKey(2)">B</button>
-            <button class="btn btn-primary" type="button" btn-radio="3" ng-click="updateKey(3)" autofocus="autofocus">C</button>
-            <button class="btn btn-primary" type="button" btn-radio="4" ng-click="updateKey(4)">Db</button>
-            <button class="btn btn-primary" type="button" btn-radio="5" ng-click="updateKey(5)">D</button>
-            <button class="btn btn-primary" type="button" btn-radio="6" ng-click="updateKey(6)">Eb</button>
-            <button class="btn btn-primary" type="button" btn-radio="7" ng-click="updateKey(7)">E</button>
-            <button class="btn btn-primary" type="button" btn-radio="8" ng-click="updateKey(8)">F</button>
-            <button class="btn btn-primary" type="button" btn-radio="9" ng-click="updateKey(9)">F#/Gb</button>
-            <button class="btn btn-primary" type="button" btn-radio="10" ng-click="updateKey(10)">G</button>
-            <button class="btn btn-primary" type="button" btn-radio="11" ng-click="updateKey(11)">Ab</button>
+        <div class="container-fluid text-center">
+            <button class="btn btn-outline-primary" type="button" btn-radio="0" ng-click="updateKey(0)">A</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="1" ng-click="updateKey(1)">Bb</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="2" ng-click="updateKey(2)">B</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="3" ng-click="updateKey(3)" autofocus="autofocus">C</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="4" ng-click="updateKey(4)">Db</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="5" ng-click="updateKey(5)">D</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="6" ng-click="updateKey(6)">Eb</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="7" ng-click="updateKey(7)">E</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="8" ng-click="updateKey(8)">F</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="9" ng-click="updateKey(9)">F#/Gb</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="10" ng-click="updateKey(10)">G</button>
+            <button class="btn btn-outline-primary" type="button" btn-radio="11" ng-click="updateKey(11)">Ab</button>
         </div>
 
         <hr/>
@@ -37,7 +45,7 @@
         <table class="table table-striped table-bordered table-sm">
             <thead>
                 <tr>
-                    <th>*Major Key*</th>
+                    <th class="border-info">*Major Key*</th>
                     <th>I</th>
                     <th>II</th>
                     <th>III</th>
@@ -49,15 +57,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Diatonic Chords</th>
+                    <th>Diatonic Chords
+                        <a href="https://en.wikipedia.org/wiki/Diatonic_and_chromatic" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in majorScale(0)">{{chord}}</td>
                 </tr>
                 <tr>
-                    <th>Parallel Minor</th>
+                    <th>Parallel Minor
+                        <a href="https://en.wikipedia.org/wiki/Parallel_key" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in majorScale(5)">{{chord}}</td>
                 </tr>
                 <tr>
-                    <th>Tritone Substitutions</th>
+                    <th>Tritone Substitutions
+                        <a href="https://en.wikipedia.org/wiki/Tritone_substitution" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in tritoneSubstitutions()">{{chord}}</td>
                 </tr>
                 <tr>
@@ -70,15 +84,21 @@
                     <th>V of VI (III7)</th>
                 </tr>
                 <tr>
-                    <th>Secondary Dominants</th>
+                    <th>Secondary Dominants
+                        <a href="https://en.wikipedia.org/wiki/Secondary_chords#Dominant" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in secondaryDominants()">{{chord}}</td>
                 </tr>
                 <tr>
-                    <th>Augmented Sixth</th>
+                    <th>Augmented Sixth
+                        <a href="https://en.wikipedia.org/wiki/Augmented_sixth_chord" target="_default">(*)</a>
+                    </th>
                     <td>{{augSixth()}}</td>
                 </tr>
                 <tr>
-                    <th>Neapolitan Sixth</th>
+                    <th>Neapolitan Sixth
+                        <a href="https://en.wikipedia.org/wiki/Neapolitan_chord" target="_default">(*)</a>
+                    </th>
                     <td>{{neapolitanSixth()}}</td>
                 </tr>
                 <tr>
@@ -88,7 +108,7 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <th>*Minor Keys*</th>
+                    <th class="border-info">*Minor Keys*</th>
                     <th>I</th>
                     <th>II</th>
                     <th>III</th>
@@ -98,15 +118,21 @@
                     <th>VII</th>
                 </tr>
                 <tr>
-                    <th>Natural Minor (Aeolian)</th>
+                    <th>Natural Minor
+                        <a href="https://en.wikipedia.org/wiki/Minor_scale#Natural_minor_scale" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in majorScale(5)">{{chord}}</td>
                 </tr>
                 <tr>
-                    <th>Harmonic Minor</th>
+                    <th>Harmonic Minor
+                        <a href="https://en.wikipedia.org/wiki/Minor_scale#Harmonic_minor_scale" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in harmonicMinorScale()">{{chord}}</td>
                 </tr>
                 <tr>
-                    <th>Melodic Minor</th>
+                    <th>Melodic Minor
+                        <a href="https://en.wikipedia.org/wiki/Minor_scale#Melodic_minor_scale" target="_default">(*)</a>
+                    </th>
                     <td ng-repeat="chord in melodicMinorScale()">{{chord}}</td>
                 </tr>
                 <tr>
@@ -116,7 +142,9 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <th>Modal Substitutions</th>
+                    <th class="border-info">Modal Substitutions
+                        <a href="https://en.wikipedia.org/wiki/Mode_(music)" target="_default">(*)</a>
+                    </th>
                     <th>I</th>
                     <th>II</th>
                     <th>III</th>
@@ -164,7 +192,7 @@
             </a> |
             <a href="https://github.com/jstrassburg/chord-theory" target="_blank">
                 <span class="ion-social-github"></span>
-            </a>
+            </a> | &copy; 2017 JiM Strassburg
         </p>
     </div>
 

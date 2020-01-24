@@ -1,7 +1,7 @@
 angular.module('app', [])
 
 .controller('ChordTheory', function($scope){
-    $scope.allKeys = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#/Gb', 'G', 'Ab'];
+    $scope.allKeys = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#|Gb', 'G', 'Ab'];
     $scope.keyIndex = 3; // default to C
 
     $scope.updateKey = function(keyIndex) {
@@ -30,10 +30,12 @@ angular.module('app', [])
     };
 
     $scope.secondaryDominants = function(){
-        var steps = [2,2,1,2,2,2,1];
-        var decorators = ['7', '7', '7', '7', '7', '7', '7'];
+        var steps = [2,2,1,2,2,2];
+        var decorators = ['7', '7', '7', '7', '7', '7'];
 
-        return $scope.scale($scope.keyIndex + 7, 0, steps, decorators);
+        var chords = $scope.scale($scope.keyIndex + 7, 0, steps, decorators);
+        chords.shift(); // V of I doesn't make sense, it's just the V
+        return chords;
     };
 
     $scope.harmonicMinorScale = function(){

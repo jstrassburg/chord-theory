@@ -1,5 +1,6 @@
 provider "aws" {
-  region = "us-east-1"
+  profile = "chord-theory"
+  region  = "us-east-1"
 }
 
 data "aws_iam_policy_document" "s3_bucket_policy" {
